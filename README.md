@@ -152,4 +152,57 @@ AI-Network-Intrusion-Detection/
 └── screenshots/
 ```
 
-## 10
+## 10. Installation and Execution
+
+**Step 1 – Clone the repository**
+
+```bash
+git clone https://github.com/sahana215/AI-Network-Intrusion-Detection.git
+```
+
+**Step 2 – Navigate to the project directory**
+
+```bash
+cd AI-Network-Intrusion-Detection
+```
+
+**Step 3 – Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 4 – Run the Streamlit dashboard**
+
+```bash
+python -m streamlit run app.py
+```
+
+For live monitoring, execute the packet capture, flow extraction, and prediction scripts in sequence.
+
+## 11. Performance and Evaluation
+
+| Model | Evaluation |
+|---|---|
+| Random Forest | 87.25% test accuracy |
+| Isolation Forest | 32,545 anomalies detected in test dataset |
+
+*Note: These results are based on the UNSW-NB15 testing dataset. They do not represent measured accuracy on live network traffic.*
+
+## 12. Future Enhancements
+
+- Continuous real-time network monitoring.
+- Advanced network flow feature extraction.
+- Improved detection of emerging attack patterns.
+- Alert notifications for suspicious activities.
+- Enhanced SOC dashboard with historical analysis.
+
+## 13. Disclaimer
+
+This project is developed for educational, research, and defensive cybersecurity purposes. Network monitoring should only be performed on networks for which proper authorization has been obtained.
+
+---
+
+**Project Domain:** Cybersecurity | Network Security | Machine Learning | Intrusion Detection
+
+**Developed by:** Sahana S
