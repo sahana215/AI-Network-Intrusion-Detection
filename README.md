@@ -147,9 +147,7 @@ AI-Network-Intrusion-Detection/
 ├── check_features.py
 │
 ├── requirements.txt
-├── README.md
-│
-└── screenshots/
+└── README.md
 ```
 
 ## 10. Installation and Execution
@@ -178,7 +176,13 @@ pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-For live monitoring, execute the packet capture, flow extraction, and prediction scripts in sequence.
+For live monitoring, execute the packet capture, flow extraction, and prediction scripts in sequence:
+
+```bash
+python live_monitor.py
+python flow_extraction.py
+python live_prediction.py
+```
 
 ## 11. Performance and Evaluation
 
