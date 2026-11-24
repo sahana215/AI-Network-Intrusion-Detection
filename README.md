@@ -9,6 +9,11 @@ It combines supervised machine learning, anomaly detection, live packet capture,
 
 ---
 
+## Dashboard Preview
+
+![BLACKBOX SOC Dashboard](blackbox_dashboard.png)
+
+---
 ## Key Features
 
 - **AI-Based Intrusion Detection:** Random Forest classification and Isolation Forest anomaly detection.
