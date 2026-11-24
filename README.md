@@ -1,212 +1,186 @@
-# AI Network Intrusion Detection System
+# BLACKBOX
+## AI-Powered Network Intrusion Detection & SOC Platform
 
-### Machine Learning-Based Network Attack & Anomaly Detection
-
-An intelligent network security monitoring system combining supervised and unsupervised machine learning, live packet capture, and a SOC-style dashboard.
+**An AI-driven cybersecurity platform for network intrusion detection, live traffic monitoring, threat analysis, and Security Operations Center (SOC) operations.**
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
-The **AI Network Intrusion Detection System** is a cybersecurity project designed to identify potentially malicious network traffic and detect unusual network behaviour using machine learning techniques.
+BLACKBOX is an AI-powered Network Intrusion Detection and SOC Monitoring Platform developed to analyze network traffic, identify potentially suspicious activities, assess security risks, and support security monitoring.
 
-The system uses the UNSW-NB15 dataset to train and evaluate machine learning models. It also integrates live packet capture using Scapy to extract network traffic features and perform live predictions.
+The project brings together network traffic processing, attack classification, live capture, AI-based analysis, threat intelligence, and reporting components through a centralized Streamlit application.
 
-A Streamlit-based dashboard provides a centralized interface to monitor network traffic, detected attacks, and anomalies.
+It also supports offline network traffic analysis using the UNSW-NB15 dataset.
 
-## 2. Key Objectives
+## Core Components
 
-- Identify normal and malicious network traffic.
-- Detect unusual network behaviour using anomaly detection.
-- Capture and analyse live network packets.
-- Extract meaningful network flow features.
-- Provide visual network security monitoring through a dashboard.
+### 1. Network Traffic Analysis
+- Network traffic preprocessing.
+- Network flow processing.
+- Connection tracking.
+- Live network traffic capture.
 
-## 3. System Architecture
+### 2. AI-Based Detection
+- Attack classification.
+- Detection engine.
+- Live AI detection engine.
+- Attack behaviour analysis.
 
-```text
-UNSW-NB15 Dataset
-        |
-        v
-Data Preprocessing
-        |
-        v
-Feature Extraction
-        |
-        v
-Machine Learning Models
-   /             \
-Random Forest   Isolation Forest
-   |                 |
-Attack Detection   Anomaly Detection
-   \                 /
-        |
-        v
-Live Packet Capture (Scapy)
-        |
-        v
-Network Flow Extraction
-        |
-        v
-Live Traffic Prediction
-        |
-        v
-Streamlit SOC Dashboard
-```
+### 3. Security Risk Analysis
+- Risk assessment engine.
+- Suspicious activity analysis.
+- Explainability engine for detection analysis.
 
-## 4. Machine Learning Models
+### 4. Threat Intelligence
+- Threat intelligence processing.
+- Threat intelligence database integration.
+- SOC database integration.
 
-### Random Forest Classifier
+### 5. Reporting and Evaluation
+- Network detection report generation.
+- PDF report generation.
+- Model evaluation metrics.
+- Automated project test suite.
 
-A supervised machine learning algorithm used to classify network traffic into:
-- Normal Traffic
-- Attack Traffic
+## Technology Stack
 
-**Test Dataset Accuracy: 87.25%**
-
-### Isolation Forest
-
-An unsupervised anomaly detection algorithm trained using normal network traffic to identify unusual patterns that may indicate suspicious activity.
-
-Both algorithms are implemented as separate models for network attack classification and anomaly detection.
-
-## 5. Live Network Monitoring
-
-Live packet monitoring is implemented using **Scapy**.
-
-The monitoring module captures network packets and extracts:
-
-- Source IP Address
-- Destination IP Address
-- Protocol
-- Packet Size
-- Time
-- TTL (Time To Live)
-
-The captured information is stored in CSV format for further processing.
-
-## 6. Network Flow Feature Extraction
-
-Captured packets are grouped into bidirectional network flows.
-
-The system extracts the following features:
-
-| Feature | Description |
-|---|---|
-| `spkts` | Forward packet count |
-| `dpkts` | Reverse packet count |
-| `sbytes` | Forward bytes |
-| `dbytes` | Reverse bytes |
-| `dur` | Flow duration |
-| `rate` | Packet rate |
-| `sttl` | Source TTL |
-| `dttl` | Destination TTL |
-| `smean` | Average forward packet size |
-| `dmean` | Average reverse packet size |
-
-## 7. SOC Monitoring Dashboard
-
-The interactive dashboard is developed using **Streamlit**.
-
-Dashboard capabilities:
-
-- Total network traffic monitoring
-- Normal traffic statistics
-- Attack detection statistics
-- Anomaly detection statistics
-- Attack category analysis
-- Network traffic details
-- Live prediction results
-- SOC analyst recommendations
-
-## 8. Technology Stack
-
-| Category | Technologies |
+| Category | Technology |
 |---|---|
 | Programming Language | Python |
-| Dataset | UNSW-NB15 |
+| Web Application | Streamlit |
 | Data Processing | Pandas, NumPy |
 | Machine Learning | Scikit-learn |
-| Classification | Random Forest |
-| Anomaly Detection | Isolation Forest |
-| Packet Capture | Scapy |
-| Dashboard | Streamlit |
-| Data Visualization | Matplotlib |
+| Data Visualization | Plotly |
+| Network Monitoring | Live Packet Capture |
+| Database | SQLite |
+| Reporting | PDF Generation |
+| Dataset | UNSW-NB15 |
 
-## 9. Project Structure
+## Project Architecture
+
+The application is organized into separate Python components to handle network processing, detection, risk analysis, threat intelligence, database operations, and reporting.
 
 ```text
 AI-Network-Intrusion-Detection/
 │
 ├── app.py
-├── train_model.py
-├── live_model.py
-├── live_monitor.py
-├── flow_extraction.py
-├── live_prediction.py
-├── check_features.py
-│
 ├── requirements.txt
-└── README.md
+├── eval_metrics.py
+│
+├── attack_behaviour_engine.py
+├── attack_classifier.py
+├── connection_tracker.py
+├── detection_engine.py
+├── explainability_engine.py
+├── flow_engine.py
+├── live_ai_engine.py
+├── live_capture.py
+├── preprocessing.py
+├── report_generator.py
+├── risk_engine.py
+├── soc_database.py
+├── threat_intel.py
+├── train_model.py
+├── test_blackbox_suite.py
+│
+├── UNSW_NB15_testing-set.csv
+├── live_flows_dump.csv
+├── network_detection_report.csv
+│
+├── blackbox_soc.db
+└── blackbox_threat_intel.db
 ```
 
-## 10. Installation and Execution
+## Dataset
 
-**Step 1 – Clone the repository**
+**UNSW-NB15**
+
+The project includes the `UNSW_NB15_testing-set.csv` dataset file for network traffic analysis and intrusion detection evaluation.
+
+Live traffic monitoring and offline dataset analysis are separate workflows.
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.10 or later
+- pip package manager
+- Windows or Linux environment
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/sahana215/AI-Network-Intrusion-Detection.git
 ```
 
-**Step 2 – Navigate to the project directory**
+### 2. Navigate to the Project Directory
 
 ```bash
 cd AI-Network-Intrusion-Detection
 ```
 
-**Step 3 – Install dependencies**
+### 3. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the Virtual Environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**Step 4 – Run the Streamlit dashboard**
+### 6. Run the Application
 
 ```bash
-python -m streamlit run app.py
+streamlit run app.py
 ```
 
-For live monitoring, execute the packet capture, flow extraction, and prediction scripts in sequence:
+The application will launch in the default web browser.
 
-```bash
-python live_monitor.py
-python flow_extraction.py
-python live_prediction.py
-```
+## Model Evaluation
 
-## 11. Performance and Evaluation
+The project includes `eval_metrics.py` for model evaluation and `train_model.py` for model training workflows.
 
-| Model | Evaluation |
-|---|---|
-| Random Forest | 87.25% test accuracy |
-| Isolation Forest | 32,545 anomalies detected in test dataset |
+Evaluation results should be interpreted separately from live network monitoring results.
 
-*Note: These results are based on the UNSW-NB15 testing dataset. They do not represent measured accuracy on live network traffic.*
+## Project Objectives
 
-## 12. Future Enhancements
+- Develop an AI-powered network intrusion detection platform.
+- Analyze network traffic and identify suspicious behaviour.
+- Support live network traffic monitoring.
+- Provide attack classification and risk analysis.
+- Integrate threat intelligence and SOC database components.
+- Generate security analysis reports.
 
-- Continuous real-time network monitoring.
-- Advanced network flow feature extraction.
-- Improved detection of emerging attack patterns.
-- Alert notifications for suspicious activities.
-- Enhanced SOC dashboard with historical analysis.
+## Project Status
 
-## 13. Disclaimer
+**Development Status: Completed**
 
-This project is developed for educational, research, and defensive cybersecurity purposes. Network monitoring should only be performed on networks for which proper authorization has been obtained.
+BLACKBOX combines network intrusion detection, live traffic monitoring, security analysis, threat intelligence, and SOC monitoring components in a unified application.
+
+## Author
+
+**Sahana S**
+
+Cyber Security Student
+
+GitHub: [@sahana215](https://github.com/sahana215)
+
+**Repository:** [AI-Network-Intrusion-Detection](https://github.com/sahana215/AI-Network-Intrusion-Detection)
 
 ---
 
-**Project Domain:** Cybersecurity | Network Security | Machine Learning | Intrusion Detection
+## Disclaimer
 
-**Developed by:** Sahana S
+This project is intended for educational and defensive cybersecurity purposes. Live network monitoring must only be performed on networks for which proper authorization has been obtained. AI-generated detection results should be reviewed before being treated as confirmed security incidents.
