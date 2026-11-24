@@ -1,145 +1,143 @@
 # BLACKBOX
 ## AI-Powered Network Intrusion Detection & SOC Platform
 
-**An intelligent cybersecurity platform combining machine learning-based intrusion detection, network traffic analysis, live monitoring, and SOC-focused security operations.**
+**An Intelligent Network Defense and Security Operations Platform**
+
+BLACKBOX is an AI-powered Network Intrusion Detection and Security Operations Center (SOC) platform built to bring network visibility, intelligent threat detection, behavioral analysis, and security incident investigation into a unified environment.
+
+Designed around a centralized SOC operations console, BLACKBOX combines network monitoring, dataset intelligence, AI-driven detection, threat intelligence, risk analysis, incident visibility, and automated security reporting.
+
+The platform aims to support security monitoring and investigation through a structured, intelligence-driven workflow.
 
 ---
 
-## 1. Project Overview
+## Platform Overview
 
-BLACKBOX is an AI-powered Network Intrusion Detection and Security Operations Center (SOC) platform developed to analyze network traffic and identify potentially malicious activities.
+BLACKBOX provides a centralized **Network Defense Intelligence Platform** through a dedicated SOC dashboard.
 
-The project combines supervised machine learning, unsupervised anomaly detection, network flow processing, live packet capture, attack behaviour analysis, risk assessment, threat intelligence, and security reporting.
+Its interface is organized into eight operational workspaces:
 
-A Streamlit-based dashboard provides a centralized interface for network security monitoring and analysis.
+| Workspace | Purpose |
+|---|---|
+| Command Center | Centralized SOC overview and operational posture |
+| Network Monitoring | Network traffic monitoring and visibility |
+| Dataset Intelligence | Dataset-based network security analysis |
+| AI Detection Engine | AI-powered intrusion detection |
+| Threat Intelligence Hub | Threat intelligence analysis |
+| SOC Alerts & Incidents | Security alert and incident visibility |
+| Threat Analytics & Tuning | Behavioral threat analytics and detection tuning |
+| Automated Security Reports | Security reporting and documentation |
 
-## 2. Key Features
+---
 
-### Network Traffic Analysis
-- Network traffic preprocessing.
-- Network flow processing and analysis.
-- Connection tracking.
-- Live network packet capture.
+## Core Capabilities
 
-### Hybrid AI-Based Intrusion Detection
-- Random Forest-based attack classification.
-- Isolation Forest-based anomaly detection.
-- Combined detection results using a hybrid approach.
-- Model training and evaluation.
+### AI-Powered Network Intrusion Detection
+- Hybrid AI-based network detection workflow
+- Network traffic classification and analysis
+- Suspicious activity identification
+- Anomaly detection capabilities
 
-### Attack Behaviour Analysis
-- Suspicious network behaviour analysis.
-- Attack pattern identification.
-- Network activity investigation.
+### Live Network Monitoring
+- Live network traffic capture
+- Network flow analysis
+- Connection tracking
+- Monitoring of network activity
 
-### Risk Assessment
-- Risk scoring and classification.
-- Suspicious activity assessment.
-- Detection result analysis.
+### Behavioral Threat Analytics
+- Attack behaviour analysis
+- Suspicious activity investigation
+- Threat pattern analysis
+- Risk-based security assessment
 
 ### Threat Intelligence
-- Threat intelligence processing.
-- Threat intelligence database integration.
+- Threat intelligence integration
+- Threat-related analysis
+- Intelligence-supported investigation
 
-### SOC Monitoring
-- Centralized security dashboard.
-- Alert and incident monitoring.
-- Network security analysis.
+### SOC Operations
+- Centralized security command center
+- Alert and incident visibility
+- Operational security monitoring
+- Security analysis and investigation support
 
-### Explainability & Reporting
-- Detection result explanations.
-- Security report generation.
-- CSV-based network analysis records.
-- PDF report generation.
+### Security Reporting
+- Automated security report generation
+- Detection and analysis documentation
+- Security investigation reporting
 
-## 3. System Architecture
+---
+
+## Platform Architecture
+
+BLACKBOX follows a modular architecture that separates traffic processing, detection, analysis, intelligence, and reporting.
 
 ```text
-             NETWORK TRAFFIC / DATASET
+                  NETWORK INPUT
                         |
              +----------+----------+
              |                     |
-        Live Capture           Offline Dataset
-             |                     |
-       Network Flow          Preprocessing
-        Processing                 |
-             |               Feature Extraction
+       LIVE TRAFFIC             DATASET
              |                     |
              +----------+----------+
                         |
-                 AI Detection
+                TRAFFIC PROCESSING
                         |
-              +---------+---------+
-              |                   |
-         Random Forest       Isolation Forest
-         Classification      Anomaly Detection
-              |                   |
-              +---------+---------+
+                  FLOW ANALYSIS
                         |
-                 Hybrid Detection
+                AI DETECTION ENGINE
                         |
-              Attack Behaviour Analysis
+             BEHAVIOURAL ANALYSIS
                         |
-                  Risk Assessment
+                 RISK ASSESSMENT
                         |
-          +-------------+-------------+
-          |             |             |
-     Threat Intel   SOC Database  Explainability
-          |             |             |
-          +-------------+-------------+
+              THREAT INTELLIGENCE
                         |
-                Streamlit Dashboard
+              SOC ALERT MANAGEMENT
                         |
-                  PDF Reporting
+              CENTRALIZED DASHBOARD
+                        |
+              SECURITY REPORTING
 ```
 
-## 4. Machine Learning Approach
+---
 
-**Random Forest Classifier**
+## Technology Stack
 
-A supervised machine learning algorithm used to classify network traffic into normal and attack categories.
-
-**Isolation Forest**
-
-An unsupervised anomaly detection algorithm used to identify unusual network traffic patterns.
-
-**Hybrid Detection**
-
-The training workflow combines Random Forest and Isolation Forest predictions to identify potentially malicious traffic.
-
-## 5. Technology Stack
-
-| Category | Technologies |
+| Component | Technology |
 |---|---|
 | Programming Language | Python |
 | Web Dashboard | Streamlit |
 | Machine Learning | Scikit-learn |
-| Classification | Random Forest |
-| Anomaly Detection | Isolation Forest |
 | Data Processing | Pandas, NumPy |
-| Visualization | Plotly |
-| Packet Capture | Scapy |
-| Graph Processing | NetworkX |
+| Data Visualization | Plotly |
+| Network Packet Analysis | Scapy |
 | Database | SQLite |
-| PDF Reporting | ReportLab |
+| Report Generation | ReportLab |
 
-## 6. Dataset
+---
+
+## Dataset
 
 **UNSW-NB15 Network Intrusion Detection Dataset**
 
-The repository includes `UNSW_NB15_testing-set.csv` for network traffic analysis and evaluation.
+The project repository includes the `UNSW_NB15_testing-set.csv` dataset for network intrusion detection analysis.
 
-The project distinguishes between offline dataset analysis and live network monitoring. Offline evaluation results should not be interpreted as live network detection accuracy.
+BLACKBOX supports dataset-based analysis and live network monitoring as distinct workflows.
 
-## 7. Project Structure
+---
+
+## Repository Structure
 
 ```text
 AI-Network-Intrusion-Detection/
 │
 ├── app.py
 ├── requirements.txt
-├── eval_metrics.py
+│
 ├── train_model.py
+├── eval_metrics.py
+├── test_blackbox_suite.py
 │
 ├── attack_behaviour_engine.py
 ├── attack_classifier.py
@@ -155,42 +153,40 @@ AI-Network-Intrusion-Detection/
 ├── soc_database.py
 ├── threat_intel.py
 │
-├── test_blackbox_suite.py
-│
 ├── UNSW_NB15_testing-set.csv
-├── live_flows_dump.csv
-├── network_detection_report.csv
-│
-├── blackbox_soc.db
-└── blackbox_threat_intel.db
+└── network_detection_report.csv
 ```
 
-## 8. Installation
+---
+
+## Installation & Setup
 
 ### Prerequisites
-- Python 3.10 or later
-- pip package manager
-- Appropriate permissions for live packet capture
 
-### Step 1: Clone the Repository
+- Python 3.x
+- pip package manager
+- Required Python dependencies
+- Appropriate permissions for authorized live packet capture
+
+### Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/sahana215/AI-Network-Intrusion-Detection.git
 ```
 
-### Step 2: Navigate to the Project Directory
+### Step 2 — Navigate to the Project
 
 ```bash
 cd AI-Network-Intrusion-Detection
 ```
 
-### Step 3: Create a Virtual Environment
+### Step 3 — Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Step 4: Activate the Environment
+### Step 4 — Activate the Environment
 
 **Windows:**
 
@@ -198,45 +194,54 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-### Step 5: Install Dependencies
+### Step 5 — Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 6: Launch the Dashboard
+### Step 6 — Launch BLACKBOX
 
 ```bash
 streamlit run app.py
 ```
 
-## 9. Project Objectives
+The application will start locally and provide access to the BLACKBOX SOC dashboard through your browser.
 
-- Develop an AI-powered network intrusion detection platform.
-- Identify suspicious network traffic and abnormal behaviour.
-- Integrate supervised and unsupervised machine learning techniques.
-- Support live network monitoring and flow analysis.
-- Provide risk assessment and threat intelligence capabilities.
-- Support SOC monitoring and security reporting.
+---
 
-## 10. Project Status
+## Project Objectives
+
+- Build an integrated AI-powered network intrusion detection platform.
+- Improve visibility into network activity and suspicious behaviour.
+- Support both live traffic monitoring and dataset-based analysis.
+- Integrate threat intelligence into network security analysis.
+- Provide a centralized environment for SOC alert and incident visibility.
+- Support investigation through behavioral analytics and risk assessment.
+- Generate structured security reports.
+
+---
+
+## Project Status
 
 **Development Status: Completed**
 
-BLACKBOX brings together machine learning-based network intrusion detection, live traffic monitoring, attack behaviour analysis, threat intelligence, and SOC-oriented monitoring in a unified cybersecurity platform.
+BLACKBOX is a completed project that brings together AI-powered network intrusion detection, live monitoring, threat intelligence, behavioral analytics, SOC operations, and automated security reporting in a unified platform.
 
-## 11. Author
+---
+
+## Author
 
 **Sahana S**
 
 Cyber Security Student
 
-GitHub: [@sahana215](https://github.com/sahana215)
+**GitHub:** [github.com/sahana215](https://github.com/sahana215)
 
-**Project Repository:** [BLACKBOX – AI Network Intrusion Detection](https://github.com/sahana215/AI-Network-Intrusion-Detection)
+**Project Repository:** [AI Network Intrusion Detection – BLACKBOX](https://github.com/sahana215/AI-Network-Intrusion-Detection)
 
 ---
 
 ## Disclaimer
 
-This project is developed for educational and defensive cybersecurity purposes. Live network monitoring and testing must only be performed on networks for which proper authorization has been obtained. AI-generated detection results should be reviewed before being treated as confirmed security incidents.
+BLACKBOX is developed for educational and defensive cybersecurity purposes. Network monitoring and packet capture must only be performed on systems and networks for which proper authorization has been obtained. Detection outputs should be validated before being treated as confirmed security incidents.
