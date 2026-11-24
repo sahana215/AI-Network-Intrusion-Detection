@@ -1,0 +1,21 @@
+Traffic_ID,Random_Forest,Anomaly_Detection,Final_Result,Attack_Probability,Risk_Level,Detection_Reason
+1,Attack,Normal,Attack,68.51,MEDIUM,Random Forest identified attack-like traffic
+2,Attack,Normal,Attack,74.15,MEDIUM,Random Forest identified attack-like traffic
+3,Normal,Normal,Normal,49.06,LOW,No suspicious pattern detected
+4,Attack,Normal,Attack,56.9,MEDIUM,Random Forest identified attack-like traffic
+5,Attack,Normal,Attack,67.64,MEDIUM,Random Forest identified attack-like traffic
+6,Attack,Normal,Attack,64.51,MEDIUM,Random Forest identified attack-like traffic
+7,Attack,Normal,Attack,59.92,MEDIUM,Random Forest identified attack-like traffic
+8,Attack,Normal,Attack,53.38,MEDIUM,Random Forest identified attack-like traffic
+9,Normal,Normal,Normal,0.0,LOW,No suspicious pattern detected
+10,Normal,Normal,Normal,0.0,LOW,No suspicious pattern detected
+11,Normal,Normal,Normal,0.0,LOW,No suspicious pattern detected
+12,Normal,Normal,Normal,0.0,LOW,No suspicious pattern detected
+13,Attack,Normal,Attack,62.09,MEDIUM,Random Forest identified attack-like traffic
+14,Attack,Normal,Attack,50.45,MEDIUM,Random Forest identified attack-like traffic
+15,Attack,Normal,Attack,81.1,HIGH,Random Forest identified attack-like traffic
+16,Attack,Normal,Attack,56.94,MEDIUM,Random Forest identified attack-like traffic
+17,Attack,Normal,Attack,92.46,HIGH,Random Forest identified attack-like traffic
+18,Attack,Normal,Attack,53.57,MEDIUM,Random Forest identified attack-like traffic
+19,Attack,Anomaly,Attack,76.53,HIGH,Attack classification and unusual traffic pattern
+20,Attack,Normal,Attack,71.82,MEDIUM,Random Forest identified attack-like traffic
